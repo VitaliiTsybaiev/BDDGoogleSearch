@@ -29,9 +29,9 @@ public class SearchSteps {
 	public void verifyResult(String searchResult, boolean presence) {
 		List<String> results = resultsPage.getResultsList();
 		if (presence)
-			Assert.assertTrue(results.contains(searchResult));
+			Assert.assertTrue("Result does not contain " + searchResult, results.contains(searchResult));
 		else
-			Assert.assertFalse(results.contains(searchResult));
+			Assert.assertFalse("Result contains " + searchResult, results.contains(searchResult));
 	}
 
 }
